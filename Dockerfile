@@ -4,10 +4,9 @@ LABEL maintainer="Raincal <cyj94228@gmail.com>"
 
 COPY ./disqus /var/www/html/
 
-WORKDIR /var/www/html
+RUN echo export DISQUS_EMAIL=$DISQUS_EMAIL >> /root/.bashrc
+RUN echo export DISQUS_PASSWORD=$DISQUS_PASSWORD >> /root/.bashrc
 
-ENV DISQUS_EMAIL DISQUS_EMAIL
-ENV DISQUS_PASSWORD DISQUS_PASSWORD
 ENV DISQUS_USERNAME "Raincal"
 ENV DISQUS_WEBSITE "https://raincal.top"
 ENV DISQUS_SHORTNAME "raincal"

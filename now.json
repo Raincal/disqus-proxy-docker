@@ -1,5 +1,5 @@
 {
-  "alias": "disqus-api-example",
+  "alias": "raincal-blog-disqus",
   "env": {
     "DISQUS_EMAIL": "@disqus-email",
     "DISQUS_PASSWORD": "@disqus-password"
