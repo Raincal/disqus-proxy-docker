@@ -1,0 +1,7 @@
+{
+  "alias": "disqus-api-example",
+  "env": {
+    "DISQUS_EMAIL": "@disqus-email",
+    "DISQUS_PASSWORD": "@disqus-password"
+  }
+}

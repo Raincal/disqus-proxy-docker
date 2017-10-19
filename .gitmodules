@@ -1,0 +1,4 @@
+[submodule "disqus"]
+	path = disqus
+	url = https://github.com/Raincal/disqus-php-api.git
+	branch = now
