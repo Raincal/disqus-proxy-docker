@@ -2,6 +2,9 @@
   "alias": "raincal-blog-disqus",
   "env": {
     "DISQUS_EMAIL": "@disqus-email",
-    "DISQUS_PASSWORD": "@disqus-password"
+    "DISQUS_PASSWORD": "@disqus-password",
+    "DISQUS_USERNAME": "Raincal",
+    "DISQUS_WEBSITE": "https://raincal.com",
+    "DISQUS_SHORTNAME": "raincal"
   }
 }
