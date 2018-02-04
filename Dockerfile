@@ -1,4 +1,4 @@
-FROM php:7.1.10-apache
+FROM php:7.2.1-apache
 
 LABEL maintainer="Raincal <cyj94228@gmail.com>"
 
@@ -8,7 +8,7 @@ RUN echo export DISQUS_EMAIL=$DISQUS_EMAIL >> /root/.bashrc
 RUN echo export DISQUS_PASSWORD=$DISQUS_PASSWORD >> /root/.bashrc
 
 ENV DISQUS_USERNAME "Raincal"
-ENV DISQUS_WEBSITE "https://raincal.top"
+ENV DISQUS_WEBSITE "https://raincal.com"
 ENV DISQUS_SHORTNAME "raincal"
 ENV DISQUS_APPROVED true
 
