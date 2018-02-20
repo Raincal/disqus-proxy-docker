@@ -5,6 +5,12 @@
     "DISQUS_PASSWORD": "@disqus-password",
     "DISQUS_USERNAME": "Raincal",
     "DISQUS_WEBSITE": "https://raincal.com",
-    "DISQUS_SHORTNAME": "raincal"
+    "DISQUS_SHORTNAME": "raincal",
+    "GRAVATAR_CDN": "//cdn.v2ex.com/gravatar/",
+    "GRAVATAR_DEFAULT": "https://ooo.0o0.ooo/2018/02/12/5a814be6d5e7f.png",
+    "SITE_NAME": "Raincal's Blog",
+    "SMTP_HOST": "smtp.qq.com",
+    "SMTP_USERNAME": "admin@raincal.com",
+    "SMTP_PASSWORD": "@smtp-password"
   }
 }
