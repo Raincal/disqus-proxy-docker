@@ -1,9 +1,11 @@
-FROM php:7.2.2-apache
+FROM php:7.2.3-apache
 
 LABEL maintainer="Raincal <cyj94228@gmail.com>"
 
-COPY ./disqus /var/www/html/
+COPY ./disqus/api /var/www/html/
 
+ENV PUBLIC_KEY ""
+ENV SECRET_KEY ""
 ENV DISQUS_EMAIL ""
 ENV DISQUS_PASSWORD ""
 ENV DISQUS_USERNAME ""
@@ -16,7 +18,6 @@ ENV DISQUS_IP "151.101.0.134"
 ENV DISQUS_MEDIAIP "151.101.24.64"
 
 ENV GRAVATAR_CDN "//cn.gravatar.com/avatar/"
-ENV GRAVATAR_DEFAULT "https://a.disquscdn.com/images/noavatar92.png"
 ENV EMOJI_PATH "https://assets-cdn.github.com/images/icons/emoji/unicode/"
 
 ENV SITE_NAME ""

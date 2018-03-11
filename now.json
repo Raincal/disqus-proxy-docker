@@ -1,13 +1,14 @@
 {
   "alias": "raincal-blog-disqus",
   "env": {
+    "PUBLIC_KEY": "@public-key",
+    "SECRET_KEY": "@secret-key",
     "DISQUS_EMAIL": "@disqus-email",
     "DISQUS_PASSWORD": "@disqus-password",
     "DISQUS_USERNAME": "Raincal",
     "DISQUS_WEBSITE": "https://raincal.com",
     "DISQUS_SHORTNAME": "raincal",
     "GRAVATAR_CDN": "https://gravatar.cat.net/avatar/",
-    "GRAVATAR_DEFAULT": "https://gravatar.cat.net/avatar/cb85efa6e1ba6fda8790b768d73f2863",
     "SITE_NAME": "Raincal's Blog",
     "SMTP_HOST": "smtp.qq.com",
     "SMTP_USERNAME": "admin@raincal.com",
