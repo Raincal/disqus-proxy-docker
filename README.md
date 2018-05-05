@@ -11,7 +11,7 @@
 
 ## Demo
 
-浏览器访问：[DEMO PAGE](http://localhost:4000/post/vscode-icon-share/)
+浏览器访问：[DEMO PAGE](https://raincal.com/post/vscode-icon-share/)
 
 ## 注册 now 账号
 
