@@ -11,11 +11,7 @@
 
 ## Demo
 
-浏览器访问：[DEMO PAGE](https://raincal.com/2017/10/12/vscode-icon-share/)
-
-![QR](./qrcode.png)
-
-手机端可扫描二维码访问
+浏览器访问：[DEMO PAGE](http://localhost:4000/post/vscode-icon-share/)
 
 ## 注册 now 账号
 
