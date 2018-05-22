@@ -8,7 +8,7 @@
     "DISQUS_USERNAME": "Raincal",
     "DISQUS_WEBSITE": "https://raincal.com",
     "DISQUS_SHORTNAME": "raincal",
-    "GRAVATAR_CDN": "https://gravatar.cat.net/avatar/",
+    "GRAVATAR_CDN": "https://gravatar.loli.net/avatar/",
     "SMTP_HOST": "smtp.office365.com",
     "SMTP_PORT": 587,
     "SMTP_SECURE": "STARTTLS",
