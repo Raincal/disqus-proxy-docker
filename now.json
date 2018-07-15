@@ -10,7 +10,7 @@
     "DISQUS_SHORTNAME": "raincal",
     "GRAVATAR_CDN": "https://gravatar.loli.net/avatar/",
     "SMTP_HOST": "smtp.office365.com",
-    "SMTP_PORT": 587,
+    "SMTP_PORT": "587",
     "SMTP_SECURE": "STARTTLS",
     "SMTP_USERNAME": "admin@raincal.com",
     "SMTP_PASSWORD": "@smtp-password"

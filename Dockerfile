@@ -1,4 +1,4 @@
-FROM php:7.2.5-apache
+FROM php:7.2.7-apache
 
 LABEL maintainer="Raincal <cyj94228@gmail.com>"
 
@@ -14,6 +14,7 @@ ENV DISQUS_SHORTNAME ""
 ENV DISQUS_APPROVED true
 
 ENV GRAVATAR_CDN "//cn.gravatar.com/avatar/"
+ENV GRAVATAR_DEFAULT "retro"
 ENV EMOJI_PATH "https://assets-cdn.github.com/images/icons/emoji/unicode/"
 
 ENV SMTP_SECURE "ssl"
