@@ -1,8 +1,8 @@
-FROM php:7.2.7-apache
+FROM raincal/php-apache:alpine
 
 LABEL maintainer="Raincal <cyj94228@gmail.com>"
 
-COPY ./disqus/api /var/www/html/
+COPY ./disqus/api /app/
 
 ENV PUBLIC_KEY ""
 ENV SECRET_KEY ""
