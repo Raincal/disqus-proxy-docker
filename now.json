@@ -13,6 +13,8 @@
     "SMTP_PORT": "587",
     "SMTP_SECURE": "STARTTLS",
     "SMTP_USERNAME": "admin@raincal.com",
-    "SMTP_PASSWORD": "@smtp-password"
+    "SMTP_PASSWORD": "@smtp-password",
+    "SMTP_FROM": "admin@raincal.com",
+    "SMTP_FROMNAME": "Raincal's Blog"
   }
 }
