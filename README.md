@@ -1,100 +1,88 @@
 # disqus-proxy-docker
 
-> 部署 [disqus-php-api](https://github.com/fooleap/disqus-php-api) 到 Now.sh
+> [disqus-php-api](https://github.com/fooleap/disqus-php-api) Docker 镜像
 
-## 通过 Now.sh 部署的优势
+## 环境变量
 
-* 自带 https
-* 可在国内正常访问
-* 免费套餐可以同时运行 3 个实例
-* 支持 Docker / Node.js / Static Websites 部署
+| 变量名           | 默认值                                                    | 描述                                                                                 |
+| ---------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| PUBLIC_KEY       |                                                           | Disqus APP 公钥，在 https://disqus.com/api/applications/ 申请注册后获得              |
+| SECRET_KEY       |                                                           | Disqus APP 私钥，在 https://disqus.com/api/applications/ 申请注册后获得              |
+| DISQUS_USERNAME  |                                                           | Disqus 用户名                                                                        |
+| DISQUS_EMAIL     |                                                           | Disqus 注册邮箱，重要                                                                |
+| DISQUS_PASSWORD  |                                                           | Disqus 密码，重要                                                                    |
+| DISQUS_WEBSITE   |                                                           | 网站域名，如：'https://raincal.com'                                                  |
+| DISQUS_SHORTNAME |                                                           | 网站在 Disqus 对应的 shortname                                                       |
+| DISQUS_APPROVED  | true                                                      | 评论是否免审核，true 即跳过评论预审核，false 则按后台设置                            |
+| GRAVATAR_CDN     | //cn.gravatar.com/avatar/                                 | Gravatar 头像 CDN                                                                    |
+| GRAVATAR_DEFAULT | retro                                                     | Gravatar 默认头像，即 d 参数，可参考 https://www.gravatar.com/site/implement/images/ |
+| EMOJI_PATH       | https://assets-cdn.github.com/images/icons/emoji/unicode/ | Emoji 表情 PNG 资源路径                                                              |
+| SMTP_SECURE      | ssl                                                       | 安全协议                                                                             |
+| SMTP_HOST        |                                                           | 邮箱服务器                                                                           |
+| SMTP_PORT        | 465                                                       | 端口号                                                                               |
+| SMTP_USERNAME    |                                                           | SMTP 登录的账号，即邮箱号                                                            |
+| SMTP_PASSWORD    |                                                           | SMTP 登录的账号，即邮箱密码                                                          |
+| SMTP_FROM        |                                                           | 发件人的邮箱地址，可以留空                                                           |
+| SMTP_FROMNAME    |                                                           | 发件人的名称，可以留空                                                               |
 
-## Demo
+## 部署到 [Now](https://zeit.co/now)
+
+### 优势
+
+- 自带 https
+- 可在国内正常访问
+- 免费套餐可以同时运行 3 个实例
+- 支持 Docker / Node.js / Static Websites 部署
+
+[使用文档](https://zeit.co/docs)
+
+### Demo
 
 浏览器访问：[DEMO PAGE](https://raincal.com/post/vscode-icon-share/)
 
-## 注册 now 账号
+### 教程
 
-* 访问 https://zeit.co/login
-* 输入邮箱
-* 前往邮箱 点击链接完成注册
+#### 创建 disqus-api 文件夹并进入
 
-> Note: 登录也是同样的操作
+#### 创建 Dockerfile
 
-## 下载 now 命令行工具
+```Dockerfile
+FROM raincal/disqus-proxy-docker:latest
+```
 
-* ### 通过 npm 安装
+#### 创建 now.json
+
+填入相关变量，@开头为私密信息，需要通过 **now secrets add** 添加
+
+```json
+{
+  "alias": "raincal-blog-disqus",
+  "env": {
+    "PUBLIC_KEY": "@public-key",
+    "SECRET_KEY": "@secret-key",
+    "DISQUS_EMAIL": "@disqus-email",
+    "DISQUS_PASSWORD": "@disqus-password",
+    "DISQUS_USERNAME": "Raincal",
+    "DISQUS_WEBSITE": "https://raincal.com",
+    "DISQUS_SHORTNAME": "raincal",
+    "GRAVATAR_CDN": "https://gravatar.loli.net/avatar/",
+    "SMTP_HOST": "smtp.office365.com",
+    "SMTP_PORT": "587",
+    "SMTP_SECURE": "STARTTLS",
+    "SMTP_USERNAME": "admin@raincal.com",
+    "SMTP_PASSWORD": "@smtp-password",
+    "SMTP_FROM": "admin@raincal.com",
+    "SMTP_FROMNAME": "Raincal's Blog"
+  }
+}  
+```
+
+#### 部署
 
 ```bash
-npm install -g now
-```
-
-* ### 到官网下载
-
-https://zeit.co/download#command-line
-
-相关命令可以通过 **now help** 查看
-
-## 命令行登录
-
-```bash
-now login
-```
-
-## 配置 disqus 账号
-
-> Note: 免费套餐的项目 源码都是公开的 可以通过 now secrets add 添加私密信息
-
-```bash
-now secrets add disqus-email "你的disqus邮箱"
-now secrets add disqus-password "你的disqus密码"
-```
-
-## 使用教程
-
-* ### clone 本项目到本地
-
-```bash
-git clone https://github.com/Raincal/disqus-proxy-docker.git
-cd disqus-proxy-docker
-git submodule init
-git submodule update
-```
-
-* ### 修改相关参数
-
-打开 Dockerfile 对照着 disqus/api/config.php 文件里的说明 修改相关配置
-
-## 部署
-
-在项目根目录输入 **now** 开始部署
-
-```
-now
-```
-
-部署时会得到一个链接 默认会保存到剪切板
-
-部署成功后可以通过
-
-```bash
-now alias disqus-proxy-docker-gopxvkzmwu.now.sh 自定义子域
-```
-
-修改默认的 URL 链接
-
-或者修改 now.json 文件的 **alias** 然后在命令行输入
-
-```bash
-now alias
-```
-
-完成自定义子域
-
-> Note: now 部署的应用 一段时间不用后会被 Frozen (冻结) 可以通过 now scale 修改实例的范围
-
-```bash
-now scale 你的应用链接 1
+now --public
 ```
 
 至此 后端 api 服务就部署好了 🎉
+
+之后请看 [disqus-php-api](https://github.com/fooleap/disqus-php-api) 使用说明
