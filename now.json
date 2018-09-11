@@ -1,5 +1,10 @@
 {
+  "public": true,
+  "type": "docker",
   "alias": "raincal-blog-disqus",
+  "features": {
+    "cloud": "v1"
+  },
   "env": {
     "PUBLIC_KEY": "@public-key",
     "SECRET_KEY": "@secret-key",

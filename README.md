@@ -14,6 +14,7 @@
 | DISQUS_WEBSITE   |                                                           | 网站域名，如：'https://raincal.com'                                                  |
 | DISQUS_SHORTNAME |                                                           | 网站在 Disqus 对应的 shortname                                                       |
 | DISQUS_APPROVED  | true                                                      | 评论是否免审核，true 即跳过评论预审核，false 则按后台设置                            |
+| DISQUS_BLACKLIST | false                                                     | 评论发表应用官方的 IP 黑名单，true 即启用，false 则跳过                              |
 | GRAVATAR_CDN     | //cn.gravatar.com/avatar/                                 | Gravatar 头像 CDN                                                                    |
 | GRAVATAR_DEFAULT | retro                                                     | Gravatar 默认头像，即 d 参数，可参考 https://www.gravatar.com/site/implement/images/ |
 | EMOJI_PATH       | https://assets-cdn.github.com/images/icons/emoji/unicode/ | Emoji 表情 PNG 资源路径                                                              |
@@ -80,7 +81,7 @@ FROM raincal/disqus-proxy-docker:latest
 #### 部署
 
 ```bash
-now --public
+now
 ```
 
 至此 后端 api 服务就部署好了 🎉
