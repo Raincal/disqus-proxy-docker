@@ -57,7 +57,12 @@ FROM raincal/disqus-proxy-docker:latest
 
 ```json
 {
+  "public": true,
+  "type": "docker",
   "alias": "raincal-blog-disqus",
+  "features": {
+    "cloud": "v1"
+  },
   "env": {
     "PUBLIC_KEY": "@public-key",
     "SECRET_KEY": "@secret-key",
@@ -75,7 +80,7 @@ FROM raincal/disqus-proxy-docker:latest
     "SMTP_FROM": "admin@raincal.com",
     "SMTP_FROMNAME": "Raincal's Blog"
   }
-}  
+} 
 ```
 
 #### 部署
